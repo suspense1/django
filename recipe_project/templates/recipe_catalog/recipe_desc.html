@@ -4,40 +4,45 @@
         <meta charset="utf-8">
         <meta name="description" content="Описание страницы">
         <link rel="icon" href="fav.ico" type="image">
-        <title>Рецепты</title>
+        <title>Наши Рецепты</title>
 
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     </head>
 
     <body>
-        <div >
+        {% include '../header.html' %}
+
+        <div class="ml-5 mr-5 mt-5">
             <h1>Рецепт</h1>
             <h2>{{ recipe.name }}</h2>
-            <table >
+
+            <table class="mt-5 w-50 table table-striped table-dark">
               <thead>
                 <tr>
                   <th scope="col">#</th>
                   <th scope="col">Название</th>
                   <th scope="col">Вес</th>
-                  <th scope="col">Сырой вес</th>
                   <th scope="col">Цена</th>
                 </tr>
               </thead>
 
               <tbody>
-                {% for ingredient in recipe.ingredient_list %}
+                {% for ingredient in ingredients %}
                     <tr>
                         <th scope="row">{{ forloop.counter }}</th>
                         <td>{{ ingredient.name }}</td>
-                        <td>{{ ingredient.weight }}</td>
-                        <td>{{ ingredient.raw_weight }}</td>
+                        <td>{{ingredient.measure }} {{ingredient.ed_izm }}</td>
                         <td>{{ ingredient.price }}</td>
                     </tr>
                 {% empty %}
-                    <span>Нет ингредиентов</span>
+                    <span>Нет ингредиентов :(</span>
                 {% endfor %}
               </tbody>
             </table>
+            <p>
+              Суммарный вес: {{ total_weight }} г. <br/>
+              Суммарная стоимость: {{ total_price }} руб.
+            </p>
         </div>
     </body>
 </html>

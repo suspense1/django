@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-w_1na3&(053@n)f8*n(ri$!cti^oe0xw!wu#r88r^o+seo34g3'
+SECRET_KEY = 'django-insecure-===hgg^!4*2chnmrk-2wch8b-_pr49025qy^f#uwm-3*7pk#7%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -51,6 +51,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'recipe_project.urls'
+
 TEMPLATES_DIR = BASE_DIR / 'templates'
 TEMPLATES = [
     {
